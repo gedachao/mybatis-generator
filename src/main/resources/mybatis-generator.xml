@@ -57,7 +57,7 @@
             <!-- 指定列的java数据类型 -->
             <!-- <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" /> -->
        <!-- </table>-->
-        <table tableName="cat" >
+        <table tableName="dog" >
         </table>
 
     </context>

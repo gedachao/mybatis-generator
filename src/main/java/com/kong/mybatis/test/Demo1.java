@@ -1,6 +1,7 @@
 package com.kong.mybatis.test;
 
 import com.kong.mybatis.mapper.CatMapper;
+import com.kong.mybatis.mapper.DogMapper;
 import com.kong.mybatis.mapper.PersonMapper;
 import com.kong.mybatis.mapper.UserMapper;
 import com.kong.mybatis.model.*;
@@ -9,11 +10,12 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
 @SpringBootTest
-@RunWith(SpringJUnit4ClassRunner.class)
+@RunWith(SpringRunner.class)
 public class Demo1 {
     @Autowired
     UserMapper userMapper;
@@ -23,6 +25,9 @@ public class Demo1 {
 
     @Autowired
     CatMapper catMapper;
+
+    @Autowired
+    DogMapper dogMapper;
 
 
     @Test
@@ -45,8 +50,12 @@ public class Demo1 {
 
     @Test
     public void test3(){
-        List<Cat> cats = catMapper.selectByExample(new CatExample());
-        System.out.println(cats);
+        Dog dog = new Dog();
+        dog.setPkDog(2);
+        dog.setDogName("乔治");
+        dog.setAddress("总警司");
+        int insert = dogMapper.insert(dog);
+        System.out.println(insert);
     }
 
 }
