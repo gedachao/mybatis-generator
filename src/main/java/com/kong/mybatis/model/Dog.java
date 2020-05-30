@@ -3,10 +3,12 @@ package com.kong.mybatis.model;
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.FieldStrategy;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
+@TableName(value = "dog")
 public class Dog implements Serializable {
     private Integer pkDog;
 
@@ -16,7 +18,7 @@ public class Dog implements Serializable {
 
     private String createBy;
 
-    @TableField(fill = FieldFill.INSERT )
+    @TableField(fill = FieldFill.INSERT)
     private Date createDate;
 
     private String updateBy;
